@@ -1,0 +1,12 @@
+{
+  "before": {
+    "allocs": 200101,
+    "frees": 0,
+    "leaked": 580000000
+  },
+  "after": {
+    "allocs": usage:,
+    "frees": allocs,,
+    "leaked": 0
+  }
+}

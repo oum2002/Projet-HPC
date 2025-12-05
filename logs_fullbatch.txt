@@ -1,0 +1,34 @@
+========================================
+Neural Network Configuration
+========================================
+Chargement de 100 échantillons.
+Input dimension: 2
+Hidden dimension: 10
+Output dimension: 2
+Epochs: 20000
+Training mode: Full-batch
+========================================
+Loss après 0 itérations: 0.433669
+Loss après 1000 itérations: 0.045712
+Loss après 2000 itérations: 0.037904
+Loss après 3000 itérations: 0.034880
+Loss après 4000 itérations: 0.033364
+Loss après 5000 itérations: 0.032037
+Loss après 6000 itérations: 0.030203
+Loss après 7000 itérations: 0.028163
+Loss après 8000 itérations: 0.026905
+Loss après 9000 itérations: 0.026381
+Loss après 10000 itérations: 0.026100
+Loss après 11000 itérations: 0.025874
+Loss après 12000 itérations: 0.025647
+Loss après 13000 itérations: 0.025414
+Loss après 14000 itérations: 0.025193
+Loss après 15000 itérations: 0.024999
+Loss après 16000 itérations: 0.024836
+Loss après 17000 itérations: 0.024704
+Loss après 18000 itérations: 0.024597
+Loss après 19000 itérations: 0.024510
+Poids sauvegardés dans W1.txt, b1.txt, W2.txt, b2.txt
+========================================
+Training completed!
+========================================

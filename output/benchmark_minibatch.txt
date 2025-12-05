@@ -1,0 +1,2 @@
+iteration,loss,time_seconds
+0,0.346274,0.010364

@@ -1,0 +1,279 @@
+==================================================================
+STEP 3: Mini-batch Gradient Descent Testing
+==================================================================
+Start time: Sun Nov 16 20:00:52 +01 2025
+
+Generating dataset (10,000 samples)...
+Generated dataset:
+  - Samples: 10000
+  - Noise level: 0.2
+  - Random seed: 3
+  - Files saved in data/
+  - X shape: (10000, 2)
+  - y shape: (10000,)
+  - Class distribution: [5000 5000]
+✓ Dataset generated
+
+Compiling code...
+rm -f *.o mlp gmon.out callgrind.out.*
+gcc -O3 -march=native -Wall -g -ffast-math -c main.c
+gcc -O3 -march=native -Wall -g -ffast-math -c model.c
+gcc -O3 -march=native -Wall -g -ffast-math -c utils.c
+gcc -O3 -march=native -Wall -g -ffast-math main.o model.o utils.o -lm -o mlp
+✓ Compilation successful
+
+==================================================================
+Test 1: Full-batch Gradient Descent (baseline)
+==================================================================
+Running with batch_size=10000 (full-batch)...
+Loaded 10000 samples.
+Loss after epoch 0: 0.349705
+Loss after epoch 1000: 0.185090
+Loss after epoch 2000: 0.185158
+Loss after epoch 3000: 0.185200
+Loss after epoch 4000: 0.185254
+Loss after epoch 5000: 0.185123
+Loss after epoch 6000: 0.185052
+Loss after epoch 7000: 0.185096
+Loss after epoch 8000: 0.185097
+Loss after epoch 9000: 0.185032
+Loss after epoch 10000: 0.185436
+Loss after epoch 11000: 0.185053
+Loss after epoch 12000: 0.185078
+Loss after epoch 13000: 0.185140
+Loss after epoch 14000: 0.185109
+Loss after epoch 15000: 0.185326
+Loss after epoch 16000: 0.185152
+Loss after epoch 17000: 0.185112
+Loss after epoch 18000: 0.185022
+Loss after epoch 19000: 0.185079
+Weights saved to output/W1.txt, output/b1.txt, output/W2.txt, output/b2.txt
+
+real	1m10.888s
+user	1m10.633s
+sys	0m0.018s
+
+Full-batch Results:
+  Time: s
+  Final Loss: 
+
+==================================================================
+Test 2: Mini-batch Gradient Descent
+==================================================================
+----------------------------------------------------------
+Testing batch_size=8...
+Loaded 10000 samples.
+Loss after epoch 0: 0.349705
+Loss after epoch 1000: 0.185090
+Loss after epoch 2000: 0.185158
+Loss after epoch 3000: 0.185200
+Loss after epoch 4000: 0.185254
+Loss after epoch 5000: 0.185123
+Loss after epoch 6000: 0.185052
+Loss after epoch 7000: 0.185096
+Loss after epoch 8000: 0.185097
+Loss after epoch 9000: 0.185032
+Loss after epoch 10000: 0.185436
+Loss after epoch 11000: 0.185053
+Loss after epoch 12000: 0.185078
+Loss after epoch 13000: 0.185140
+Loss after epoch 14000: 0.185109
+Loss after epoch 15000: 0.185326
+Loss after epoch 16000: 0.185152
+Loss after epoch 17000: 0.185112
+Loss after epoch 18000: 0.185022
+Loss after epoch 19000: 0.185079
+Weights saved to output/W1.txt, output/b1.txt, output/W2.txt, output/b2.txt
+
+real	1m10.813s
+user	1m10.564s
+sys	0m0.019s
+  Time: s
+  Final Loss: 
+  Updates per epoch: 1250
+
+----------------------------------------------------------
+Testing batch_size=16...
+Loaded 10000 samples.
+Loss after epoch 0: 0.349705
+Loss after epoch 1000: 0.185090
+Loss after epoch 2000: 0.185158
+Loss after epoch 3000: 0.185200
+Loss after epoch 4000: 0.185254
+Loss after epoch 5000: 0.185123
+Loss after epoch 6000: 0.185052
+Loss after epoch 7000: 0.185096
+Loss after epoch 8000: 0.185097
+Loss after epoch 9000: 0.185032
+Loss after epoch 10000: 0.185436
+Loss after epoch 11000: 0.185053
+Loss after epoch 12000: 0.185078
+Loss after epoch 13000: 0.185140
+Loss after epoch 14000: 0.185109
+Loss after epoch 15000: 0.185326
+Loss after epoch 16000: 0.185152
+Loss after epoch 17000: 0.185112
+Loss after epoch 18000: 0.185022
+Loss after epoch 19000: 0.185079
+Weights saved to output/W1.txt, output/b1.txt, output/W2.txt, output/b2.txt
+
+real	1m11.280s
+user	1m11.028s
+sys	0m0.023s
+  Time: s
+  Final Loss: 
+  Updates per epoch: 625
+
+----------------------------------------------------------
+Testing batch_size=32...
+Loaded 10000 samples.
+Loss after epoch 0: 0.349705
+Loss after epoch 1000: 0.185090
+Loss after epoch 2000: 0.185158
+Loss after epoch 3000: 0.185200
+Loss after epoch 4000: 0.185254
+Loss after epoch 5000: 0.185123
+Loss after epoch 6000: 0.185052
+Loss after epoch 7000: 0.185096
+Loss after epoch 8000: 0.185097
+Loss after epoch 9000: 0.185032
+Loss after epoch 10000: 0.185436
+Loss after epoch 11000: 0.185053
+Loss after epoch 12000: 0.185078
+Loss after epoch 13000: 0.185140
+Loss after epoch 14000: 0.185109
+Loss after epoch 15000: 0.185326
+Loss after epoch 16000: 0.185152
+Loss after epoch 17000: 0.185112
+Loss after epoch 18000: 0.185022
+Loss after epoch 19000: 0.185079
+Weights saved to output/W1.txt, output/b1.txt, output/W2.txt, output/b2.txt
+
+real	1m10.832s
+user	1m10.577s
+sys	0m0.027s
+  Time: s
+  Final Loss: 
+  Updates per epoch: 312
+
+----------------------------------------------------------
+Testing batch_size=64...
+Loaded 10000 samples.
+Loss after epoch 0: 0.349705
+Loss after epoch 1000: 0.185090
+Loss after epoch 2000: 0.185158
+Loss after epoch 3000: 0.185200
+Loss after epoch 4000: 0.185254
+Loss after epoch 5000: 0.185123
+Loss after epoch 6000: 0.185052
+Loss after epoch 7000: 0.185096
+Loss after epoch 8000: 0.185097
+Loss after epoch 9000: 0.185032
+Loss after epoch 10000: 0.185436
+Loss after epoch 11000: 0.185053
+Loss after epoch 12000: 0.185078
+Loss after epoch 13000: 0.185140
+Loss after epoch 14000: 0.185109
+Loss after epoch 15000: 0.185326
+Loss after epoch 16000: 0.185152
+Loss after epoch 17000: 0.185112
+Loss after epoch 18000: 0.185022
+Loss after epoch 19000: 0.185079
+Weights saved to output/W1.txt, output/b1.txt, output/W2.txt, output/b2.txt
+
+real	1m10.924s
+user	1m10.673s
+sys	0m0.021s
+  Time: s
+  Final Loss: 
+  Updates per epoch: 156
+
+----------------------------------------------------------
+Testing batch_size=128...
+Loaded 10000 samples.
+Loss after epoch 0: 0.349705
+Loss after epoch 1000: 0.185090
+Loss after epoch 2000: 0.185158
+Loss after epoch 3000: 0.185200
+Loss after epoch 4000: 0.185254
+Loss after epoch 5000: 0.185123
+Loss after epoch 6000: 0.185052
+Loss after epoch 7000: 0.185096
+Loss after epoch 8000: 0.185097
+Loss after epoch 9000: 0.185032
+Loss after epoch 10000: 0.185436
+Loss after epoch 11000: 0.185053
+Loss after epoch 12000: 0.185078
+Loss after epoch 13000: 0.185140
+Loss after epoch 14000: 0.185109
+Loss after epoch 15000: 0.185326
+Loss after epoch 16000: 0.185152
+Loss after epoch 17000: 0.185112
+Loss after epoch 18000: 0.185022
+Loss after epoch 19000: 0.185079
+Weights saved to output/W1.txt, output/b1.txt, output/W2.txt, output/b2.txt
+
+real	1m10.984s
+user	1m10.733s
+sys	0m0.019s
+  Time: s
+  Final Loss: 
+  Updates per epoch: 78
+
+----------------------------------------------------------
+Testing batch_size=256...
+Loaded 10000 samples.
+Loss after epoch 0: 0.349705
+Loss after epoch 1000: 0.185090
+Loss after epoch 2000: 0.185158
+Loss after epoch 3000: 0.185200
+Loss after epoch 4000: 0.185254
+Loss after epoch 5000: 0.185123
+Loss after epoch 6000: 0.185052
+Loss after epoch 7000: 0.185096
+Loss after epoch 8000: 0.185097
+Loss after epoch 9000: 0.185032
+Loss after epoch 10000: 0.185436
+Loss after epoch 11000: 0.185053
+Loss after epoch 12000: 0.185078
+Loss after epoch 13000: 0.185140
+Loss after epoch 14000: 0.185109
+Loss after epoch 15000: 0.185326
+Loss after epoch 16000: 0.185152
+Loss after epoch 17000: 0.185112
+Loss after epoch 18000: 0.185022
+Loss after epoch 19000: 0.185079
+Weights saved to output/W1.txt, output/b1.txt, output/W2.txt, output/b2.txt
+
+real	1m10.913s
+user	1m10.667s
+sys	0m0.017s
+  Time: s
+  Final Loss: 
+  Updates per epoch: 39
+
+==================================================================
+Saving Results
+==================================================================
+✓ Results saved to: results/step3_minibatch/results.json
+
+==================================================================
+Generating Comparison Plot
+==================================================================
+Traceback (most recent call last):
+  File "/home/oumkalthoum.mhamdi/Predoc_2025/Project/mlp_codes_backup/plot_step3.py", line 8, in <module>
+    data = json.load(f)
+  File "/home/oumkalthoum.mhamdi/.conda/envs/mlp/lib/python3.14/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/home/oumkalthoum.mhamdi/.conda/envs/mlp/lib/python3.14/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/oumkalthoum.mhamdi/.conda/envs/mlp/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oumkalthoum.mhamdi/.conda/envs/mlp/lib/python3.14/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 7 column 13 (char 173)
